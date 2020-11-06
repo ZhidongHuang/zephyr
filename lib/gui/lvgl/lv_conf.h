@@ -390,13 +390,14 @@ typedef void *lv_indev_drv_user_data_t;
 extern void *lv_default_font_custom_ptr;
 #define LV_FONT_DEFAULT ((lv_font_t *) lv_default_font_custom_ptr)
 #endif
-
+// #define LV_FONT_ROBOTO_22 1
+// #define LV_FONT_DEFAULT		(&lv_font_roboto_22)
 typedef void *lv_font_user_data_t;
 
 /* Text settings */
 
 #ifdef CONFIG_LVGL_TXT_ENC_ASCII
-#define LV_TXT_ENC LV_TXT_ENC_ASCII
+#define LV_TXT_ENC LVGL_TXT_ENC_ASCII
 #elif defined(CONFIG_LVGL_TXT_ENC_UTF8)
 #define LV_TXT_ENC LV_TXT_ENC_UTF8
 #endif

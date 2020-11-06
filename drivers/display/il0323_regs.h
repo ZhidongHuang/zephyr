@@ -1,0 +1,153 @@
+/*
+ * Copyright (c) 2020 PHYTEC Messtechnik GmbH, Zhidong Huang
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#ifndef ZEPHYR_DRIVERS_DISPLAY_IL0323_REGS_H_
+#define ZEPHYR_DRIVERS_DISPLAY_IL0323_REGS_H_
+
+#define IL0323_CMD_PSR				0x00
+#define IL0323_CMD_PWR				0x01
+#define IL0323_CMD_POF				0x02
+#define IL0323_CMD_PFS				0x03
+#define IL0323_CMD_PON				0x04
+#define IL0323_CMD_PMES				0x05
+#define IL0323_CMD_CPSET			0x06
+#define IL0323_CMD_DSLP				0x07
+#define IL0323_CMD_DTM1				0x10
+#define IL0323_CMD_DSP				0x11
+#define IL0323_CMD_DRF				0x12
+#define IL0323_CMD_DTM2				0x13
+#define IL0323_CMD_DUSPI			0x15
+#define IL0323_CMD_AUTO				0x17
+#define IL0323_CMD_LUTOPT			0x2A
+#define IL0323_CMD_KWOPT			0x2B
+#define IL0323_CMD_PLL				0x30
+#define IL0323_CMD_TSC				0x40
+#define IL0323_CMD_TSE				0x41
+#define IL0323_CMD_TSW				0x42
+#define IL0323_CMD_TSR				0x43
+#define IL0323_CMD_PBC				0x44
+#define IL0323_CMD_CDI				0x50
+#define IL0323_CMD_LPD				0x51
+#define IL0323_CMD_EVS				0x52
+#define IL0323_CMD_TCON				0x60
+#define IL0323_CMD_TRES				0x61
+#define IL0323_CMD_GSST				0x65
+#define IL0323_CMD_REV				0x70
+#define IL0323_CMD_FLG				0x71
+#define IL0323_CMD_AMV				0x80
+#define IL0323_CMD_VV				0x81
+#define IL0323_CMD_VDCS				0x82
+#define IL0323_CMD_PTL				0x90
+#define IL0323_CMD_PTIN				0x91
+#define IL0323_CMD_PTOUT			0x92
+#define IL0323_CMD_PGM				0xA0
+#define IL0323_CMD_APG				0xA1
+#define IL0323_CMD_ROTP				0xA2
+#define IL0323_CMD_CCSET			0xE0
+#define IL0323_CMD_PWS				0xE3
+#define IL0323_CMD_LVSEL			0xE4
+#define IL0323_CMD_TSSET			0xE5
+#define IL0323_CMD_TSBDRY			0xE7
+#define IL0323_CMD_FACTORY			0xD2
+
+#define IL0323_PSR_RES1				BIT(7)
+#define IL0323_PSR_RES0				BIT(6)
+#define IL0323_PSR_REG1				BIT(5)
+#define IL0323_PSR_REG0				BIT(4)
+#define IL0323_PSR_UD				BIT(3)
+#define IL0323_PSR_SHL				BIT(2)
+#define IL0323_PSR_SHD				BIT(1)
+#define IL0323_PSR_RST				BIT(0)
+
+#define IL0323_AUTO_PON_DRF_POF			0xA5
+#define IL0323_AUTO_PON_DRF_POF_DSLP	0xA7
+
+#define IL0323_CDI_REG_LENGTH			2U
+#define IL0323_CDI_BDZ_DDX_IDX			0
+#define IL0323_CDI_CDI_IDX			1
+
+#define IL0323_CDI_VBD1				BIT(7)
+#define IL0323_CDI_VBD0			    BIT(6)
+#define IL0323_CDI_DDX1				BIT(5)
+#define IL0323_CDI_DDX0			    BIT(4)
+#define IL0323_CDI_CDI2				BIT(2)
+#define IL0323_CDI_CDI1				BIT(1)
+#define IL0323_CDI_CDI0 			BIT(0)
+
+#define IL0323_TRES_REG_LENGTH			2U
+#define IL0323_TRES_HRES_IDX			0
+#define IL0323_TRES_VRES_IDX			1
+
+#define IL0323_PTL_REG_LENGTH			5U
+#define IL0323_PTL_HRST_IDX			0
+#define IL0323_PTL_HRED_IDX			1
+#define IL0323_PTL_VRST_IDX			2
+#define IL0323_PTL_VRED_IDX			3
+#define IL0323_PTL_PT_SCAN			BIT(0)
+
+#define IL0323_REG_MAX_LENGTH			5U
+#define IL0323_REG_DATA_1ST			    0
+#define IL0323_REG_DATA_2ND			    1
+#define IL0323_REG_DATA_3RD			    2
+#define IL0323_REG_DATA_4TH			    3
+#define IL0323_REG_DATA_5TH			    4
+
+/* Time constants in ms */    
+#define IL0323_RESET_DELAY			K_MSEC(10)
+#define IL0323_PON_DELAY			K_MSEC(100)
+#define IL0323_BUSY_DELAY			K_MSEC(1)
+
+
+const unsigned char lut_w1[] =
+{
+0x60	,0x5A	,0x5A	,0x00	,0x00	,0x01	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+ 	
+};	
+
+const unsigned char lut_b1[] =
+{
+0x90	,0x5A	,0x5A	,0x00	,0x00	,0x01	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+
+
+};
+
+const unsigned char lut_w[] =
+{
+0x60	,0x01	,0x01	,0x00	,0x00	,0x01	,
+0x80	,0x0f	,0x00	,0x00	,0x00	,0x01	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+
+};	
+const unsigned char lut_b[] =
+{
+0x90	,0x01	,0x01	,0x00	,0x00	,0x01	,
+0x40	,0x0f	,0x00	,0x00	,0x00	,0x01	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+0x00	,0x00	,0x00	,0x00	,0x00	,0x00	,
+
+};
+
+
+#endif /* ZEPHYR_DRIVERS_DISPLAY_IL0323_REGS_H_ */

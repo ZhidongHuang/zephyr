@@ -44,9 +44,9 @@ config LVGL_BUILD_IN_FONT_ROBOTO_12_SUBPX
 	help
 	  Enable build-in font support with sub-pixel rendering, size 12 pixels
 
-choice
+choice 
 	prompt "Default LVGL font"
-	default LVGL_DEFAULT_FONT_BUILD_IN_UNSCII_8
+	default LVGL_DEFAULT_FONT_BUILD_IN_ROBOTO_16
 
 	config LVGL_DEFAULT_FONT_BUILD_IN_ROBOTO_12
 		bool "Build-in font size 12"

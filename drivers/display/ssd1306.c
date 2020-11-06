@@ -17,7 +17,7 @@ LOG_MODULE_REGISTER(ssd1306, CONFIG_DISPLAY_LOG_LEVEL);
 
 #include "ssd1306_regs.h"
 #include <display/cfb.h>
-
+#include <stdio.h>
 #if DT_INST_PROP(0, segment_remap) == 1
 #define SSD1306_PANEL_SEGMENT_REMAP	true
 #else
@@ -412,6 +412,7 @@ static int ssd1306_init_device(struct device *dev)
 
 static int ssd1306_init(struct device *dev)
 {
+	printf ("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n");
 	struct ssd1306_data *driver = dev->driver_data;
 
 	LOG_DBG("");
